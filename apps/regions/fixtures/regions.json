@@ -1,0 +1,56 @@
+[
+    {
+        "pk": 1,
+        "model": "regions.region",
+        "fields": {
+            "title": "АР Крим",
+            "short_title": "UA_KR"
+        }
+    },
+
+    {
+        "pk": 2,
+        "model": "regions.region",
+        "fields": {"short_title":"UA_VI", "title": "Вінницька"}},
+
+    {
+        "pk": 3,         "model": "regions.region",         "fields": {"short_title":"UA_VO", "title": "Волинська"}},
+
+    {
+        "pk": 4,         "model": "regions.region",         "fields": {"short_title":"UA_DP", "title": "Дніпропетровська"}},
+    {
+        "pk": 5,         "model": "regions.region",         "fields": {"short_title":"UA_DT", "title": "Донецька"}},
+    {
+        "pk": 6,         "model": "regions.region",         "fields": {"short_title":"UA_ZT", "title": "Житомирська"}},
+    {
+        "pk": 7,         "model": "regions.region",         "fields": {"short_title":"UA_ZK", "title": "Закарпатська"}},
+    {
+        "pk": 8,         "model": "regions.region",         "fields": {"short_title":"UA_ZP", "title": "Запорізька"}},
+    {
+        "pk": 9,         "model": "regions.region",         "fields": {"short_title":"UA_IF", "title": "Івано-Франківська"}},
+    {
+        "pk": 10,         "model": "regions.region",         "fields": {"short_title":"UA_KV", "title": "Київська"}},
+    {
+        "pk": 11,         "model": "regions.region",         "fields": {"short_title":"UA_KH", "title": "Кіровоградська"}},
+    {
+        "pk": 12,         "model": "regions.region",         "fields": {"short_title":"UA_LH", "title": "Луганська"}},
+    {
+        "pk": 13,         "model": "regions.region",         "fields": {"short_title":"UA_LV", "title": "Львівська"}},
+    {         "pk": 14,         "model": "regions.region",         "fields": {"short_title":"UA_MY", "title": "Миколаївська"}},
+    {         "pk": 15,         "model": "regions.region",         "fields": {"short_title":"UA_OD", "title": "Одеська"}},
+    {         "pk": 16,         "model": "regions.region",         "fields": {"short_title":"UA_PL", "title": "Полтавська"}},
+    {         "pk": 17,         "model": "regions.region",         "fields": {"short_title":"UA_RV", "title": "Рівненська"}},
+    {         "pk": 18,         "model": "regions.region",         "fields": {"short_title":"UA_SM", "title": "Сумська"}},
+    {
+        "pk": 19,
+        "model": "regions.region",
+        "fields": {"short_title":"UA_TP", "title": "Тернопільська"}},
+    {         "pk": 20,         "model": "regions.region",         "fields": {"short_title":"UA_KK", "title": "Харківська"}},
+    {         "pk": 21,         "model": "regions.region",         "fields": {"short_title":"UA_KS", "title": "Херсонська"}},
+    {         "pk": 22,         "model": "regions.region",         "fields": {"short_title":"UA_KM", "title": "Хмельницька"}},
+    {         "pk": 23,         "model": "regions.region",         "fields": {"short_title":"UA_CK", "title": "Черкаська"}},
+    {         "pk": 24,         "model": "regions.region",         "fields": {"short_title":"UA_CV", "title": "Чернівецька"}},
+    {         "pk": 25,         "model": "regions.region",         "fields": {"short_title":"UA_CH", "title": "Чернігівська"}},
+    {         "pk": 26,         "model": "regions.region",         "fields": {"short_title":"UA_KC", "title": "м.Київ"}},
+    {         "pk": 27,         "model": "regions.region",         "fields": {"short_title":"UA_SC", "title": "м.Севастополь"}}
+]
