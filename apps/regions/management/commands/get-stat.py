@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from decimal import Decimal
 import urllib2
 from bs4 import BeautifulSoup
 import time, datetime
@@ -17,14 +18,10 @@ class Command(BaseCommand):
                 td = row.findAll('td')
                 region_title = td[0].text
                 for i in Region.objects.all():
-                    print "title", i.title
-                    print region_title
                     if i.title in region_title:
-                        print "yes"
                         reg = i
-                        import ipdb; ipdb.set_trace()
-
-                Entreprenurship(region=reg, enterprises=int(td[1].text)).save()
+                        break
+                Entreprenurship(year=2011, region=reg, enterprises=float(td[1].text.replace(",", "."))).save()
             except:
                 pass
 

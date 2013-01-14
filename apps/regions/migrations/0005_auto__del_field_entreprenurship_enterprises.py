@@ -8,30 +8,29 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Adding field 'Region.title_unicode'
-        db.add_column('regions_region', 'title_unicode',
-                      self.gf('django.db.models.fields.CharField')(default=2, max_length=100),
-                      keep_default=False)
+        # Deleting field 'Entreprenurship.enterprises'
+        db.delete_column('regions_entreprenurship', 'enterprises')
 
 
     def backwards(self, orm):
-        # Deleting field 'Region.title_unicode'
-        db.delete_column('regions_region', 'title_unicode')
+        # Adding field 'Entreprenurship.enterprises'
+        db.add_column('regions_entreprenurship', 'enterprises',
+                      self.gf('django.db.models.fields.DecimalField')(default=2, max_digits=5, decimal_places=2),
+                      keep_default=False)
 
 
     models = {
         'regions.entreprenurship': {
             'Meta': {'object_name': 'Entreprenurship'},
-            'enterprises': ('django.db.models.fields.IntegerField', [], {}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'region': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['regions.Region']"})
+            'region': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['regions.Region']"}),
+            'year': ('django.db.models.fields.IntegerField', [], {})
         },
         'regions.region': {
             'Meta': {'object_name': 'Region'},
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'short_title': ('django.db.models.fields.CharField', [], {'max_length': '10'}),
-            'title': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
-            'title_unicode': ('django.db.models.fields.CharField', [], {'max_length': '100'})
+            'title': ('django.db.models.fields.CharField', [], {'max_length': '50'})
         }
     }
 
