@@ -14,13 +14,11 @@ class Command(BaseCommand):
         soup = BeautifulSoup(page)
         table = soup.body.find("table", { "id" : "table1" })
         for row in table.findAll('tr'):
+#            import ipdb; ipdb.set_trace()
             try:
                 td = row.findAll('td')
-                region_title = td[0].text
-                for i in Region.objects.all():
-                    if i.title in region_title:
-                        reg = i
-                        break
+                region_title = td[0].text.replace("\n", "")
+                reg = Region.objects.get(title=region_title)
                 Entreprenurship(year=2011, region=reg, enterprises=float(td[1].text.replace(",", "."))).save()
             except:
                 pass

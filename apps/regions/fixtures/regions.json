@@ -3,7 +3,7 @@
         "pk": 1,
         "model": "regions.region",
         "fields": {
-            "title": "Крим",
+            "title": "Автономна Республіка Крим",
             "short_title": "UA_KR"
         }
     },
