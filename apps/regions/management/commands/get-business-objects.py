@@ -6,20 +6,27 @@ from bs4 import BeautifulSoup
 import time, datetime
 from regions.models import Region, Entreprenurship
 from django.core.management.base import BaseCommand, CommandError
+from apps.regions.models import Group
 
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        page = urllib2.urlopen('http://www.ukrstat.gov.ua/operativ/operativ2012/fin/osp/osp_reg/ksg_reg/ksg_reg_u_11.htm').read()
+        year = int(args[0])
+        group = Group.objects.get(title="Кількість суб’єктів господарювання за регіонами", year=year)
+#        import ipdb; ipdb.set_trace()
+        page = urllib2.urlopen(group.url).read()
         soup = BeautifulSoup(page)
         table = soup.body.find("table", { "id" : "table1" })
         for row in table.findAll('tr'):
-#            import ipdb; ipdb.set_trace()
             try:
                 td = row.findAll('td')
                 region_title = td[0].text.replace("\n", "")
                 reg = Region.objects.get(title=region_title)
-                Entreprenurship(year=2011, region=reg, enterprises=float(td[1].text.replace(",", "."))).save()
+                import ipdb; ipdb.set_trace()
+                obj, created = Entreprenurship.objects.get_or_create(group=group, region=reg)
+                obj.enterprises=float(td[1].text.replace(",", "."))
+                obj.companies=float(td[2].text.replace(",", "."))
+                obj.save()
             except:
                 pass
 
