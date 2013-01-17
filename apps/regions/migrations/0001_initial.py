@@ -19,7 +19,7 @@ class Migration(SchemaMigration):
         # Adding model 'Group'
         db.create_table('regions_group', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('date', self.gf('django.db.models.fields.DateField')()),
+            ('year', self.gf('django.db.models.fields.IntegerField')()),
             ('url', self.gf('django.db.models.fields.CharField')(max_length=255)),
             ('title', self.gf('django.db.models.fields.CharField')(max_length=50)),
         ))
@@ -58,10 +58,10 @@ class Migration(SchemaMigration):
         },
         'regions.group': {
             'Meta': {'object_name': 'Group'},
-            'date': ('django.db.models.fields.DateField', [], {}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
-            'url': ('django.db.models.fields.CharField', [], {'max_length': '255'})
+            'url': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
+            'year': ('django.db.models.fields.IntegerField', [], {})
         },
         'regions.region': {
             'Meta': {'object_name': 'Region'},

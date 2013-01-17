@@ -3,7 +3,7 @@
         "pk": 1,
         "model": "regions.group",
         "fields": {
-            "title": "Кількість суб’єктів господарювання за регіонами у 2011 році",
+            "title": "Кількість суб’єктів господарювання за регіонами",
             "url": "http://www.ukrstat.gov.ua/operativ/operativ2012/fin/osp/osp_reg/ksg_reg/ksg_reg_u_11.htm",
             "year": 2011
         }

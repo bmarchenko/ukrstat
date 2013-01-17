@@ -8,7 +8,7 @@ class Region(models.Model):
         return self.title
 
 class Group(models.Model):
-    date = models.DateField()
+    year = models.IntegerField()
     url = models.CharField(max_length=255)
     title = models.CharField(max_length=50)
 
