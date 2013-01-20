@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Підприємства  за регіонами у 2011 році{% endblock %}
+{% block title %}{% endblock %}
 {% block extra_js %}
     <script>
         // add all your code to this method, as this will ensure that page is loaded
@@ -33,34 +33,9 @@
 
 
     <script type="text/javascript">
-        var chartData = [{id:"UA_KR", country: "АР Крим", visits: 18.5 },
-            {id:"UA_VI", country: "Вінницька", visits: 14.5 },
-            {id:"UA_VO", country: "Волинська", visits: 15.8 },
-            {id:"UA_DP", country: "Дніпропетровська", visits:  20.3 },
-            {id:"UA_DT", country: "Донецька", visits: 17.7 },
-            {id:"UA_ZT", country: "Житомирська", visits: 14.3 },
-            {id:"UA_ZK", country: "Закарпатська", visits: 13.9 },
-            {id:"UA_ZP", country: "Запорізька", visits: 20.5 },
-            {id:"UA_IF", country: "Івано-Франківська", visits: 17.0 },
-            {id:"UA_KV", country: "Київська", visits: 19.4 },
-            {id:"UA_KH", country: "Кіровоградська", visits: 19.2 },
-            {id:"UA_LH", country: "Луганська", visits: 13.7 },
-            {id:"UA_LV", country: "Львівська", visits: 21.8 },
-            {id:"UA_MY", country: "Миколаївська", visits: 16.5 },
-            {id:"UA_OD", country: "Одеська", visits: 20.3 },
-            {id:"UA_PL", country: "Полтавська", visits: 16.9 },
-            {id:"UA_RV", country: "Рівненська", visits: 14.2},
-            {id:"UA_SM", country: "Сумська", visits: 14.5},
-            {id:"UA_TP", country: "Тернопільська", visits: 15.5},
-            {id:"UA_KK", country: "Харківська", visits: 20.5},
-            {id:"UA_KS", country: "Херсонська", visits: 16.8},
-            {id:"UA_KM", country: "Хмельницька", visits: 11.7},
-            {id:"UA_CK", country: "Черкаська", visits: 15.8},
-            {id:"UA_CV", country: "Чернівецька", visits: 11.4},
-            {id:"UA_CH", country: "Чернігівська", visits: 14.9},
-            {id:"UA_KC", country: "м.Київ", visits: 46.3},
-            {id:"UA_SC", country: "м.Севастополь", visits: 16.9}];
-
+        var chartData = [{% for i in object.entreprenurship_set.all %}
+                             {id:"{{ i.region.short_title }}", country: "{{ i.region }}", visits: {{ i.enterprises }} },
+                         {% endfor %}];
 
         window.onload = function () {
             function compare(a,b) {
@@ -115,7 +90,7 @@
     </script>
 {% endblock %}
 {% block body %}
-    <h1>Підприємства  за регіонами у 2011 році</h1>
+    <h3 style="text-align: center">{{ object }} РІ {{ object.year }}</h3>
     <div id="chartContainer" style="width: 640px; height: 400px; float: left"></div>
-    <div id="mapdiv" style="width: 640px; height: 400px; float: right"></div>
+    <div id="mapdiv" style="width: 640px; height: 400px;"></div>
 {% endblock %}
