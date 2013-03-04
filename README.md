@@ -1,1 +1,1 @@
-This is a site represents data pulled from http://www.ukrstat.gov.ua/ in a nicer way.
+This site represents data pulled from http://www.ukrstat.gov.ua/ in a nicer way.
